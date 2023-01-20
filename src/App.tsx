@@ -1,5 +1,5 @@
 import Context from './context/Context';
-import { UserContext } from './context/User/UserContext';
+import MainRoutes from './routes/mainRoutes';
 import GlobalStyle from './style/globalStyle';
 
 function App() {
@@ -7,6 +7,7 @@ function App() {
     <>
       <Context>
         <GlobalStyle />
+        <MainRoutes />
       </Context>
     </>
   );
