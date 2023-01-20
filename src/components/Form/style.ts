@@ -62,7 +62,6 @@ export const FormStyled = styled.form`
   }
 
   button {
-    margin-top: 15px;
     background-color: #0086d4;
     color: #fff;
     border: none;
