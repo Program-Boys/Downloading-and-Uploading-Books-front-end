@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
 @media (min-width: 700px) {
@@ -15,8 +15,6 @@ export default createGlobalStyle`
   }
 
   body,html{
-    width: 100vw;
-    height: 100vh;
     background-color: #0F1330;
   }
 
