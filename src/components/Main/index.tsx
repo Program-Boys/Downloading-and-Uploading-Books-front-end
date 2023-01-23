@@ -6,21 +6,6 @@ import bookImg from '../../assets/book.jpg';
 const Main = () => {
   const { books } = useContext(BookContext);
 
-  const livros = [
-    {
-      name: 'Narnia',
-      gender: 'aventura',
-    },
-    {
-      name: 'Narnia',
-      gender: 'aventura',
-    },
-    {
-      name: 'Narnia',
-      gender: 'aventura',
-    },
-  ];
-
   return (
     <StyledMain>
       <div>
@@ -28,9 +13,9 @@ const Main = () => {
         <input type="text" placeholder="Pesquisar Livro..." />
       </div>
       <StyledUl>
-        {livros.length > 0 ? (
-          livros.map((book) => (
-            <li>
+        {books.length > 0 ? (
+          books.map((book) => (
+            <li key={book.id}>
               <img src={bookImg} alt="" />
               <p>{book.name}</p>
               <p>{book.gender}</p>
