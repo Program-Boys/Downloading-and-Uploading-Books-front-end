@@ -19,4 +19,8 @@ export const StyledFooter = styled.footer`
   a:hover {
     color: #0086d4;
   }
+
+  a {
+    margin-left: 3px;
+  }
 `;
