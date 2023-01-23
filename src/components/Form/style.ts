@@ -28,6 +28,7 @@ export const FormStyled = styled.form`
     align-items: flex-start;
 
     span {
+      padding: 12px;
       color: #e74c3c;
     }
   }
@@ -68,7 +69,8 @@ export const FormStyled = styled.form`
     color: #fff;
     border: none;
     border-radius: 5px;
-    padding: 5px;
+    padding: 8px;
     width: 250px;
+    font-size: 15px;
   }
 `;
