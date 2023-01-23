@@ -3,8 +3,12 @@ import Footer from '../../components/Footer/index';
 import Form from '../../components/Form';
 import Header from '../../components/Header';
 import api from '../../services/api';
+import { useContext } from 'react';
+import { UserContext } from '../../context/User/UserContext';
 
 const PageLogin = () => {
+  const { setIsLogged } = useContext(UserContext);
+
   const formSubmit = (data: SubmitFunction) => {
     api
       .post('/user/login', data)
@@ -13,6 +17,8 @@ const PageLogin = () => {
 
         window.localStorage.setItem('TOKEN', token);
         window.localStorage.setItem('USERID', userId);
+
+        setIsLogged(true);
       })
       .catch((err) => {
         console.log(err);
