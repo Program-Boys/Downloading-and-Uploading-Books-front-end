@@ -10,8 +10,7 @@ export const FormStyled = styled.form`
   padding: 30px;
   height: 350px;
   margin: 100px auto;
-  background-color: #5c63ed;
-  opacity: 50%;
+  background-color: #5c65ed;
   border-radius: 5px;
 
   h3 {
@@ -66,7 +65,7 @@ export const FormStyled = styled.form`
   }
 
   button {
-    background-color: #0086d4;
+    background-color: #000fff;
     color: #fff;
     border: none;
     border-radius: 5px;
