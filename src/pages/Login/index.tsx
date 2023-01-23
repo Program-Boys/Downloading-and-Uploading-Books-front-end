@@ -1,4 +1,5 @@
 import { SubmitFunction } from '../../components/Form';
+import Footer from '../../components/Footer/index';
 import Form from '../../components/Form';
 import Header from '../../components/Header';
 import api from '../../services/api';
@@ -22,6 +23,7 @@ const PageLogin = () => {
     <>
       <Header />
       <Form accountSubmit={formSubmit} />
+      <Footer />
     </>
   );
 };
