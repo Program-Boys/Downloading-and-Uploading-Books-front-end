@@ -8,8 +8,8 @@ interface IForm {
 }
 
 export interface SubmitFunction {
-  email: string;
-  password: string;
+  email?: string;
+  password?: string;
 }
 
 const Form = ({ accountSubmit }: IForm) => {
