@@ -47,6 +47,7 @@ export const FormStyled = styled.form`
     border-bottom: 2px solid #3f3f3f;
     caret-color: #0086d4;
     background-color: #212121;
+    color: #fff;
     padding: 10px;
     transition: 0.5s linear;
     font-family: monospace;
