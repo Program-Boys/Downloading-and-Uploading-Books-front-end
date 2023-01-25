@@ -14,6 +14,10 @@ export const StyledMain = styled.main`
     justify-content: space-between;
     margin-bottom: 5px;
 
+    @media (min-width: 750px) {
+      max-width: 750px;
+    }
+
     p {
       color: #fff;
       font-weight: bold;
@@ -57,11 +61,19 @@ export const StyledUl = styled.ul`
   display: flex;
   flex-wrap: nowrap;
   overflow-y: auto;
-  padding: 15px;
+  padding: 8px;
   gap: 5px;
-  border-radius: 5px;
+  border-radius: 8px;
   height: 250px;
   width: 95%;
+
+  @media (min-width: 750px) {
+    flex-wrap: wrap;
+    height: 450px;
+    ::-webkit-scrollbar {
+      width: 0px;
+    }
+  }
 
   li {
     background-color: #fff;
@@ -72,7 +84,12 @@ export const StyledUl = styled.ul`
     gap: 8px;
     flex-direction: column;
     align-items: center;
+    height: 230px;
     font-size: 15px;
+
+    p {
+      color: #000000;
+    }
 
     img {
       width: 150px;
@@ -157,5 +174,17 @@ export const StyledUl = styled.ul`
         opacity: 0.4;
       }
     }
+  }
+
+  p {
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+    font-size: 21px;
+    font-weight: bold;
+  }
+
+  @media (min-width: 750px) {
+    max-width: 750px;
   }
 `;
