@@ -52,6 +52,14 @@ export const StyledMain = styled.main`
     input:focus::placeholder {
       color: #0086d4;
     }
+
+    button {
+      background-color: #2fb3ff;
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      border: none;
+    }
   }
 `;
 
