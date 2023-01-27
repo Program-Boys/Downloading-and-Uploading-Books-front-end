@@ -4,12 +4,34 @@ import { StyledMain, StyledUl } from './style';
 import bookImg from '../../assets/book.jpg';
 import ModalBase from '../ModalBase';
 import { UserContext } from '../../context/User/UserContext';
+import { FormStyled } from '../Form/style';
+import { IForm } from '../Form';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { bookSchema } from '../../validations/book.validations';
 
-const Main = () => {
+interface SubmitFunction {
+  name?: string;
+  gender?: string;
+  file?: HTMLInputElement;
+}
+
+const Main = ({ accountSubmit }: IForm) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
-  const { books } = useContext(BookContext);
-  //const { isLogged } = useContext(UserContext);
-  const [isLogged] = useState(true);
+  const { books, registerBooks } = useContext(BookContext);
+  const { isLogged } = useContext(UserContext);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<SubmitFunction>({
+    resolver: yupResolver(bookSchema),
+  });
+
+  const handleCreatedBooks = (data) => {
+    registerBooks(data);
+  };
 
   return (
     <>
@@ -42,7 +64,33 @@ const Main = () => {
           )}
         </StyledUl>
       </StyledMain>
-      {isOpenModal ? <ModalBase setIs={setIsOpenModal}>Modal</ModalBase> : null}
+      {isOpenModal ? (
+        <ModalBase setIs={setIsOpenModal}>
+          <FormStyled onSubmit={handleSubmit(handleCreatedBooks)}>
+            <h3>Cadastro de novos livros</h3>
+            <div>
+              <label>Nome</label>
+              <input
+                type="text"
+                placeholder="Nome do livro"
+                {...register('name')}
+              />
+              <span></span>
+              <label>Gênero</label>
+              <input
+                type="text"
+                placeholder="Gênero do livro"
+                {...register('gender')}
+              />
+              <span></span>
+              <label>Arquivo</label>
+              <input type="file" {...register('file')} />
+              <span></span>
+            </div>
+            <button>Enviar</button>
+          </FormStyled>
+        </ModalBase>
+      ) : null}
     </>
   );
 };
