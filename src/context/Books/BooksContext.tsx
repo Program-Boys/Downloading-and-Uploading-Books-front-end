@@ -11,6 +11,7 @@ interface IBooksProvider {
 export interface IBookContext {
   books: IBook[];
   setBooks: React.Dispatch<React.SetStateAction<IBook[]>>;
+  registerBooks: (arg: IBook) => void;
 }
 
 export interface IBook {
@@ -20,6 +21,7 @@ export interface IBook {
   owner?: IUser;
   createdAt: Date;
   updatedAt: Date;
+  file: HTMLInputElement;
 }
 
 export const BookContext = createContext<IBookContext>({} as IBookContext);
@@ -38,8 +40,24 @@ const BookProvider = ({ children }: IBooksProvider) => {
     listBooks();
   }, [setBooks]);
 
+  const registerBooks = ({ name, gender, file }: IBook) => {
+    api
+      .post(
+        '/books',
+        { name, gender },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        },
+      )
+      .then((response) => {
+        setBooks(response.data);
+      });
+  };
+
   return (
-    <BookContext.Provider value={{ books, setBooks }}>
+    <BookContext.Provider value={{ books, setBooks, registerBooks }}>
       {children}
     </BookContext.Provider>
   );
