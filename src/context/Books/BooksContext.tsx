@@ -40,11 +40,11 @@ const BookProvider = ({ children }: IBooksProvider) => {
     listBooks();
   }, [setBooks]);
 
-  const registerBooks = ({ name, gender, file }: IBook) => {
+  const registerBooks = ({ file }: IBook) => {
     api
       .post(
         '/books',
-        { name, gender },
+        { file },
         {
           headers: {
             'Content-Type': 'application/json',
