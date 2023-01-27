@@ -32,8 +32,8 @@ const UserProvider = ({ children }: IUserProvider) => {
 
   useEffect(() => {
     const loadUser = async () => {
-      const token = localStorage.getItem('@TOKEN');
-      const userID = localStorage.getItem('@USERID');
+      const token = window.localStorage.getItem('@TOKEN');
+      const userID = window.localStorage.getItem('@USERID');
 
       if (token) {
         try {
