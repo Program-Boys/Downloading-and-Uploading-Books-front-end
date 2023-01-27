@@ -3,7 +3,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { loginSchema } from '../../validations/login.validations';
 import { FormStyled } from './style';
 
-interface IForm {
+export interface IForm {
   accountSubmit: SubmitHandler<FieldValues>;
 }
 
