@@ -20,10 +20,9 @@ export const FormStyled = styled.form`
 
   div {
     padding: 15px 0;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 6px;
     align-items: flex-start;
 
     span {
